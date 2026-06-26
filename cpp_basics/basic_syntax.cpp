@@ -152,7 +152,12 @@ int main(){
 
 
 
-    //---------------------------------------ARRAYS (static)----------------------------------------------------------
+    //---------------------------------------ARRAYS ----------------------------------------------------------
+    //STATIC ALLOCATION
+    // * memory allocated at the compile time
+    // * allocation in stack memory
+
+    //No. of SUBARRAYS = n*(n+1)/2
     int marks[5];
     //finding size of array
     std::cout << sizeof(marks)/sizeof(int);  //prints 5
@@ -160,7 +165,11 @@ int main(){
     //std::min(value1, value2);   //ternary operator-based function.
     //std::swap(value1,value2);   
 
-    //---------------------------------------VECTORS (dynamic)---------------------------------------------------------
+    //---------------------------------------VECTORS(STL container)---------------------------------------------------------
+    //DYNAMIC ALLOCATION
+    // *memory allocated at the run time, thats why we can resize
+    // * allocated in the heap memory
+
     //#include <vector>
     std::vector<int> vec; //empty rn, if we try to print vec[0] we will get a segmentation fault
     std::vector<int> vec1 = {1,2,3};
@@ -174,10 +183,27 @@ int main(){
         std::cout << i <<"\n";
     }
 
+    //vector functions
+    //1. .size()
+    //2. .push_back()   element pushed at the end
+    //3. .pop_back()    element popped from the end
+    //4. .front()       gives the front value
+    //5. .back()       gives the last value
+    //6. .at(index)    gives value at the index
+    //7. .capacity()   gives the vector's capacity
+    //8. .begin()      gives pointer-like object pointing to the first element
+    //9. .end()        gives pointer-like object pointing to the last element
 
-    
-    
-    
+    /*When you try to push and vector reaches its capacity:
+       1. Allocate: It requests a new, larger memory block (typically double the current size).
+       2. Move: It copies/moves all existing elements into the new block.
+       3. Insert: It adds your new element into the new, larger array.
+       4. Delete: It frees the old memory to prevent leaks.
+    */
+
+    //when we pass them in a function, the container is "PASS BY VALUE".
+    // use vector<int>& nums while passing the parameter in the function for "PASS BY REFERENCE"
+
     
     return 0;
 
