@@ -3,6 +3,7 @@
 #include <cmath>
 #include <ctime>
 #include<cstdlib>
+ 
 
 namespace first{
     int x=1;
@@ -143,5 +144,41 @@ int main(){
     srand(time(NULL));  // this time gives random number till the number of sec that have passed since, jan 1970
     int rannum = (rand() % 6)+1;  //numbers between 1-6
     std::cout << '\n' << rannum;
+    
+
+
+    //---------------------------------------USER GENERATED FUNCTION-------------------------------------------
+    //same as C lang
+
+
+
+    //---------------------------------------ARRAYS (static)----------------------------------------------------------
+    int marks[5];
+    //finding size of array
+    std::cout << sizeof(marks)/sizeof(int);  //prints 5
+
+    //std::min(value1, value2);   //ternary operator-based function.
+    //std::swap(value1,value2);   
+
+    //---------------------------------------VECTORS (dynamic)---------------------------------------------------------
+    //#include <vector>
+    std::vector<int> vec; //empty rn, if we try to print vec[0] we will get a segmentation fault
+    std::vector<int> vec1 = {1,2,3};
+    std::vector<int> vec2(3, 0);  //3 is the size of the vector, 0 is the value at each index
+    
+    //for each loop
+    //iterator is the  value in vector not the index
+    std::vector<char> char_vec = {'a', 'b', 'c'};
+
+    for (char i : char_vec){
+        std::cout << i <<"\n";
+    }
+
+
+    
+    
+    
+    
     return 0;
-}
+
+}    
